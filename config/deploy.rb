@@ -31,6 +31,7 @@ namespace :deploy do
 
   desc "Updates the symlink for config files to the just deployed release."
   task :symlink_configs do
+    run "ln -nfs #{shared_path}/config/starfish.sqlite #{release_path}/db/starfish.sqlite"
     run "cp      #{shared_path}/config/database.yml #{release_path}/config/database.yml"
     run "ln -nfs #{shared_path}/builds #{release_path}/builds"
     run "cp      #{shared_path}/config/email.yml #{release_path}/config/email.yml"
