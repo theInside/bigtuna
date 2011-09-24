@@ -1,7 +1,12 @@
 $:.unshift(File.expand_path('./lib', ENV['rvm_path']))
 require "rvm/capistrano"
 require "bundler/capistrano"
-
+begin
+  require 'capistrano_colors'
+rescue LoadError
+  puts "`gem install capistrano_colors` to get output more userfriendly."
+end
+ 
 set :application, "bigtuna"
 set :domain, "builder.inside.io"
 set :repository, "git://github.com/theInside/bigtuna.git"
