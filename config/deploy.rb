@@ -4,7 +4,7 @@ require "bundler/capistrano"
 
 set :application, "bigtuna"
 set :domain, "builder.inside.io"
-set :repository, "git@january.inside.io:bigtuna.git"
+set :repository, "git://github.com/theInside/bigtuna.git"
 set :branch,      "inside"
 set :use_sudo, false
 set :deploy_to, "/home/passenger/bigtuna"
